@@ -1,0 +1,28 @@
+﻿#mainGrid {
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "buttons buttons"
+    "images add";
+}
+
+div {
+    padding: 5px;
+}
+
+div div {
+    background: white;
+}
+
+#buttons {
+    grid-area: buttons;
+}
+
+#imageContainer {
+    grid-area: images;
+}
+
+#add {
+    grid-area: add;
+}
