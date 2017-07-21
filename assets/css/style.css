@@ -21,8 +21,16 @@ div div {
 
 #imageContainer {
     grid-area: images;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
 }
 
 #add {
     grid-area: add;
+}
+
+.img {
+    background: black;
 }
