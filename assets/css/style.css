@@ -1,18 +1,14 @@
-﻿#mainGrid {
-    display: grid;
-    grid-template-rows: 10vh 90vh;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
-    "buttons buttons"
-    "images add";
-}
-
-div {
+div div {
     padding: 5px;
 }
 
-div div {
-    background: white;
+.image {
+    align-self: center;
+    background: black;
+}
+
+#add {
+    grid-area: add;
 }
 
 #buttons {
@@ -20,17 +16,19 @@ div div {
 }
 
 #imageContainer {
-    grid-area: images;
-    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    display: grid;
+    grid-area: images;
+    grid-gap: 5px;
+    overflow: hidden;
 }
 
-#add {
-    grid-area: add;
-}
-
-.img {
-    background: black;
+#mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas: 
+    "buttons buttons"
+    "images add";
 }
