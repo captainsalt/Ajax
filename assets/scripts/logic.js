@@ -1,5 +1,16 @@
 ﻿$(document).ready(() => {
     populateImageArea("tiger"); //test code
+    var buttonArray = ["Cat", "Dog", "Mouse", "Tiger", "Lion"];
+
+    updateButtons();
+
+    function updateButtons() {
+        for (var i = 0; i < buttonArray.length; i++) {
+            var e = buttonArray[i];
+            var button = $("<button>").html(e);
+            $("#buttons").append(button);
+        }
+    }
 
     async function populateImageArea(searchQuery) {
         var imageDiv = $("#imageContainer");

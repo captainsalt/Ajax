@@ -12,16 +12,22 @@ div div {
 }
 
 #buttons {
+    background: red;
     grid-area: buttons;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-gap: 5px;
+
 }
 
 #imageContainer {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: auto;
     display: grid;
     grid-area: images;
     grid-gap: 5px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #mainGrid {
