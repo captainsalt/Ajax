@@ -1,14 +1,30 @@
 ﻿$(document).ready(() => {
-    populateImageArea("tiger"); //test code
     var buttonArray = ["Cat", "Dog", "Mouse", "Tiger", "Lion"];
-
     updateButtons();
 
     function updateButtons() {
+        $("#buttons").empty();
+
         for (var i = 0; i < buttonArray.length; i++) {
-            var e = buttonArray[i];
-            var button = $("<button>").html(e);
+            var buttonArrayItem = buttonArray[i];
+
+            if (!buttonArrayItem) //If the string is null or empty continue
+                continue;
+
+            var button = $("<button>")
+                .html(buttonArrayItem)
+                .addClass("queryButton");
+
             $("#buttons").append(button);
+        }
+
+        hookIntoButtonEvents();
+
+        //Helper function
+        function hookIntoButtonEvents() {
+            $(".queryButton").click(e => {
+                populateImageArea($(e.currentTarget).html());
+            });
         }
     }
 
@@ -33,7 +49,7 @@
         hookIntoImageEvents();
 
         //helper functions
-        function request(searchQuery, limit = 24) {
+        function request(searchQuery, limit = 32) {
             var key = "0964cff7104b440d886afa3fe6ec8dcd";
             var baseUri = "https://api.giphy.com";
             var resource = `/v1/gifs/search?api_key=${key}&q=${searchQuery}&limit=${limit}`;
@@ -56,4 +72,20 @@
             });
         }
     }
+
+    $("#confirmAdd").click(e => {
+        var text = $("#inputText:text").val().trim();
+        var existingButtons = $(".queryButton").get();
+
+        for (var i = 0; i < existingButtons.length; i++) {
+            var buttonText = existingButtons[i].innerHTML;
+
+            //prevent duplicates
+            if (buttonText.toLowerCase() === text.toLowerCase())
+                return;
+        }
+
+        buttonArray.push(text);
+        updateButtons();
+    });
 });
