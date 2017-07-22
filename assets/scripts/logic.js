@@ -8,10 +8,6 @@
         for (var i = 0; i < buttonArray.length; i++) {
             var buttonArrayItem = buttonArray[i];
 
-            // move to add logic
-            if (!buttonArrayItem) //If the string is null or empty continue 
-                continue;
-
             var button = $("<button>")
                 .html(buttonArrayItem)
                 .addClass("queryButton");
@@ -44,7 +40,7 @@
             if (gifHeight > 120) //if gif height is greater than 120 skip it
                 continue
 
-            var gif = $(`<img>`)
+            var gif = $("<img>")
                 .addClass("image")
                 .data("data-is_active", "")
                 .data("data-inactive", response.data[i].images.fixed_width_small_still.url)
@@ -93,7 +89,7 @@
             var buttonText = existingButtons[i].innerHTML;
 
             //prevent duplicates
-            if (buttonText.toLowerCase() === text.toLowerCase())
+            if (buttonText.toLowerCase() === text.toLowerCase() || !text) // if text is null or empty
                 return;
         }
 
