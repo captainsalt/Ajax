@@ -1,5 +1,5 @@
 ﻿$(document).ready(() => {
-    var buttonArray = ["Cat", "Dog", "Mouse", "Tiger", "Lion"];
+    var buttonArray = ["Cat", "Dog", "Kevin Durant", "Computer", "Lightbulb"];
     updateButtons();
 
     function updateButtons() {
