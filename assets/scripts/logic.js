@@ -89,8 +89,10 @@
             var buttonText = existingButtons[i].innerHTML;
 
             //prevent duplicates
-            if (buttonText.toLowerCase() === text.toLowerCase() || !text) // if text is null or empty
+            if (buttonText.toLowerCase() === text.toLowerCase() || !text) {
+                alert("Invalid input. Please try again");
                 return;
+            }
         }
 
         buttonArray.push(text);
