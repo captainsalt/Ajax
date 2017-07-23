@@ -1,9 +1,28 @@
+body {
+    background: url(..\\images\\topography.png);
+}
+
+button {
+    color: white;
+    background: black;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+input {
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 1px 1px;
+}
+
 div div {
     padding: 5px;
 }
 
 .image {
     align-self: center;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 #add {
@@ -20,7 +39,7 @@ div div {
 }
 
 #imageContainer {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
     display: grid;
     grid-area: images;
@@ -37,5 +56,5 @@ div div {
 }
 
 #add  * {
-    margin: 5px 10px;
+    margin: 5px 0;
 }
