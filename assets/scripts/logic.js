@@ -85,10 +85,10 @@
         var text = $("#inputText:text").val().trim();
         var existingButtons = $(".queryButton").get();
 
+        //Loop through buttons and check to see if user is adding a duplicate
         for (var i = 0; i < existingButtons.length; i++) {
             var buttonText = existingButtons[i].innerHTML;
 
-            //prevent duplicates
             if (buttonText.toLowerCase() === text.toLowerCase() || !text) {
                 alert(`Button called ${text} already exists`);
                 return;
