@@ -89,8 +89,14 @@
         for (var i = 0; i < existingButtons.length; i++) {
             var buttonText = existingButtons[i].innerHTML;
 
-            if (buttonText.toLowerCase() === text.toLowerCase() || !text) {
-                alert(`Button called ${text} already exists`);
+            if (buttonText.toLowerCase() === text.toLowerCase())
+            {
+                alert(`A button called "${buttonText}" already exists`);
+                return;
+            }
+            else if (!text)
+            {
+                alert("Input cannot be empty");
                 return;
             }
         }
